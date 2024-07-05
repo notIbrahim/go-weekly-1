@@ -258,20 +258,6 @@ func addDigits(nums1 []int, nums2 []int) any {
 	}
 	var carry_number int
 	carry_number = 0
-	// for i := len(nums1) - 1; i > 0; i-- {
-	// 	carry_number := nums1[i] + nums2[i]
-	// 	nums1[i] = carry_number % 10
-	// 	nums1[i-1] += carry_number / 10
-	// }
-	// if nums1[0] != 0 {
-	// 	carry_number = nums1[0] + nums2[0]
-	// 	nums1[0] = carry_number % 10
-	// 	nums1 = append([]int{carry_number / 10}, nums1...)
-	// } else {
-	// 	carry_number := nums1[1] + nums2[1]
-	// 	nums1[1] = carry_number % 10
-	// 	nums1[0] += carry_number / 10
-	// }
 
 	for i := len(nums1) - 1; i >= 0; i-- {
 		sum := nums1[i] + nums2[i] + carry_number
