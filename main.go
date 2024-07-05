@@ -71,8 +71,7 @@ func isAnagram(word1 string, word2 string) bool {
 func Capitalize(words []string, exceptions []string) []string {
 	fmt.Println("Quiz 3")
 	var Capitalize []string
-
-	// Create a map for exceptions for O(1) lookup time
+	// First idea to think was make sure exception map set to true with O(N) Times
 	ExceptionMap := make(map[string]bool)
 	for _, exception := range exceptions {
 		ExceptionMap[exception] = true
@@ -83,6 +82,9 @@ func Capitalize(words []string, exceptions []string) []string {
 		if ExceptionMap[PerWord] {
 			Capitalize = append(Capitalize, PerWord)
 		} else {
+			// First i thought it was better just added another loop
+			// by using rune and reiterated each char  each_char := []rune(PerWord[0]) for _, index := range PerWords[i]
+			// if index == 0 then string.toUpper(PerWords[index]) and concat string
 			// Capitalize the first letter of the word
 			capitalizedWord := strings.ToUpper(string(PerWord[0])) + PerWord[1:]
 			Capitalize = append(Capitalize, capitalizedWord)
